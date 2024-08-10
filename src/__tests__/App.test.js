@@ -36,12 +36,12 @@ test("displays a link to GitHub with the correct href", () => {
   render(<App />);
   const githubLink = screen.getByRole("link", { name: /github/i });
   expect(githubLink).toBeInTheDocument();
-  expect(githubLink).toHaveAttribute('href', 'https://github.com/your-username');
+  expect(githubLink).toHaveAttribute('href', 'https://github.com/mark-kibuthu');
 });
 
 test("displays a link to LinkedIn with the correct href", () => {
   render(<App />);
   const linkedinLink = screen.getByRole("link", { name: /linkedin/i });
   expect(linkedinLink).toBeInTheDocument();
-  expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/your-username');
+  expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/my-username');
 });
