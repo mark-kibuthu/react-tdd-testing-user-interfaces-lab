@@ -2,18 +2,18 @@ import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import App from "../App";
 
-test("displays a top-level heading with the text 'Hi, I'm _______'", () => {
+test("displays a top-level heading with the text 'Hi, I'm Mark'", () => {
   render(<App />);
   const topLevelHeading = screen.getByRole("heading", {
-    name: /hi, i'm/i,
+    name: /hi, i'm mark/i,
     level: 1,
   });
   expect(topLevelHeading).toBeInTheDocument();
 });
 
-test("displays an image with alt text 'Your Name'", () => {
+test("displays an image with alt text 'This is an image of me.jpg'", () => {
   render(<App />);
-  const image = screen.getByAltText(/your name/i);
+  const image = screen.getByAltText(/this is an image of me\.jpg/i);
   expect(image).toBeInTheDocument();
 });
 
@@ -28,7 +28,7 @@ test("displays a second-level heading with the text 'About Me'", () => {
 
 test("displays a biography paragraph", () => {
   render(<App />);
-  const biographyParagraph = screen.getByText(/your biography text/i);
+  const biographyParagraph = screen.getByText(/this is simply dummy text of the printing and typesetting industry\. lorem ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book\. it has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged\. it was popularised in the 1960s with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus pagemaker including versions of lorem ipsum\.\./i);
   expect(biographyParagraph).toBeInTheDocument();
 });
 
